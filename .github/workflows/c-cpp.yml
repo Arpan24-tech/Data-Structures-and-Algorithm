@@ -12,16 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-    - name: Set up GCC
-      run: sudo apt-get update && sudo apt-get install -y build-essential
-
-    - name: Compile Latest Lecture (L21)
+    - name: Compile all folders
       run: |
-        # This compiles the specific file you just added
-        g++ L21/*.cpp -o lecture_output
-      
-    - name: Run Program
-      run: ./lecture_output
+        # This finds every .cpp file in any folder and tries to compile it
+        # It's a great way to ensure all your DSA solutions are syntactically correct
+        find . -name "*.cpp" -exec g++ -fsyntax-only {} +

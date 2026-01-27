@@ -7,7 +7,7 @@ int allocateBook(vector<int>&arr,int n,int m);
 int checkValidity(vector<int> arr,int n,int m,int mid);
 int main()
 {
-    vector<int> arr={15,17,20};
+    vector<int> arr={2,1,3,4};
     int n=4, m=2;
 
     cout<<allocateBook(arr,n,m)<<endl;
